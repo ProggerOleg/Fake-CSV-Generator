@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="main sample_schema__text" style="display:flex;">
+  <h2 class="data_schemas">Sample schema</h2>
+  <a href="">Edit scheme</a></div>
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Column name</th>
+      <th scope="col">Column type</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for column in columns %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{column.column_name}}</td>
+      <td>{{column.type}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="main" style="display: flex; margin: 50px 0;">
+  <h2 class="data_schemas">Data sets</h2>
+  <form class="right" style="display: flex; width: 400px;align-items: center;justify-content: space-between;" method="POST">
+    {% csrf_token %}
+    <div class="label">Rows:</div>
+    <div><input class="form-control" name="{{ form.rows.html_name }}" style="max-width: 150px;"/></div>
+    <button class="btn btn-success btn-lg" type="submit">Generate date</button>
+  </form>
+</div>
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"> Created</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in datasets %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{row.created}}</td>
+      <td>{{row.status}}</td>
+      <td><a href="{% url 'dataset_download' row.id %}">Download</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

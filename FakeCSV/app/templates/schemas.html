@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+{% block content %}
+<div class="main flex">
+    <h2 class="data_schemas">Data schemas</h2>
+
+    <a href="{% url 'new_schema'%}">
+        <button class="btn btn-success btn-lg">New schema</button>
+    </a>
+</div>
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Modified</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for schema in schemas %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td> <a href="{% url 'data_sets' schema.pk %}">{{schema.title}}</a></td>
+      <td>{{schema.modified}}</td>
+      <td style="display: flex;">
+        <div style="display: flex;justify-content: space-evenly;width: 201px;">
+          <div style="color: blue;">Edit scheme</div> <a style="color:red" href="{% url 'delete_schema' schema.pk %}">Delete</a>
+        </div>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+</body>
+</html>

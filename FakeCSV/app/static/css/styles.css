@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {text-decoration: none;}
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+h1 {
+    font: Helvetica Neue;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.login__container {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: relative;
+    max-width: 700px;
+    padding: 100px 115px 125px 115px;
+    margin: 120px auto;
+    border: 1px solid #E5E5E5;
+    vertical-align: middle;
+}
+.login__container form {
+    padding: 30px
+}
+.login__container button {
+    position: absolute;
+    bottom: 85px;
+    right: 150px;
+}
+
+.header {
+    background-color: #F7F7F9;
+    display: flex;
+    align-items: flex-start;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  width: 90%;
+  position: relative;
+  margin: 0px 0 0 40px;
+}
+.navigation-menu li {
+    display: inline-block;
+    padding: 0 20px;
+}
+.navigation-menu li a {
+    font-size:calc(3px + 1vw);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-brand {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    font-size:calc(3px + 2vw);
+}
+.navigation-schemas {
+    color:black;
+    font-size:calc(8px + 1vw);
+    margin-left: 100px;
+}
+.main {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    }
+.data_schemas{
+    font-size: 28px;
+}
+.btn-success {
+    background:#5CB85C;
+    border: #5CB85C;
+}
+
+.table {
+    margin-top: 50px;
+    max-width: 75%;
+}
+.content-text {
+    margin: 60px;
+}
+.new_schema__form label {
+    padding: 10px 0;
+}
+.new_schema__form{
+    max-width: 50%;
+}
+
+#schema_columns {
+    margin: 60px 0 15px 0;
+}
+.schema__columns__form {
+    width: 90%;
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+}
+div.schema__columns__form {
+    border: none;
+    padding: 0;
+}
+form.schema__columns__form {
+    margin-top: 60px;
+}
+.schema__columns__form .row {
+    margin-bottom: 20px;
+}
+.form-label {
+    padding-top: 10px;
+}
+.FromTo{
+    margin-right: 20px;
+}
+.delete {
+    color: red;
+    padding-top: 48px;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}
